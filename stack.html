@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var lst=[];
+        var c=-1;
+        function push(){
+            var num1 = document.getElementById("txt1").value
+            c++;
+            lst[c]=num1;
+            console.log(lst[c])
+            display()
+            document.getElementById("txt1").value=""
+        }
+        function pop(){
+            if (c==-1) {
+                alert('The stack is empty')
+            }else{
+                lst[c]=null
+                c--;
+            }
+            display()
+        }
+        function display(){
+            if(c==-1){
+                console.log("empty");
+                document.getElementById("ans").innerHTML="Empty"
+            }
+            else{
+                var tab="<table>"
+                for(var i=0;i<=c;i++){
+                    tab+="<tr><td>"+lst[i]+"</td></tr>"
+                }
+                tab+="</table>"
+                document.getElementById("ans").innerHTML=tab
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" value="Add" onclick="push()">
+    <input type="button" value="pop" onclick="pop()">
+    <div id="ans"></div>
+</body>
+</html>
+

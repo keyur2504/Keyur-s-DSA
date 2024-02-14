@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=[-5,-2,-100,-1,0,10,-12]
+        for(var i=1;i<a.length;i++){
+            var current = a[i]
+            var j=i-1
+            while(a[j]>current && j>=0){
+                a[j+1]=a[j]
+                j--
+            }
+            a[j+1]=current
+            console.log(a);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

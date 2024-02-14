@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var lst=[100,30,-10,5,10,37]
+
+        do {
+            var x=false
+            for(var i=0;i<lst.length;i++){
+                if(lst[i]>lst[i+1])
+                {
+                    var temp=lst[i]
+                    lst[i]=lst[i+1]
+                    lst[i+1]=temp
+                    x=true
+                }
+                console.log(lst[i]);
+            }
+        } while (x);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

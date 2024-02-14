@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var a = 0;
+      var next=0;
+      var z = " ";
+      function fibo() {
+          var value =parseInt (document.getElementById("txt1").value);
+          var b = 1;
+        for (var i = 1; i <= value; i++) {
+            z = z + a.toString();
+            document.getElementById("ans2").innerHTML=z+" "
+          next = a + b;
+          a = b;
+          b = next;
+        }
+        // document.getElementById("ans").innerHTML=b
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="txt1" />
+    <input type="button" value="Fibonaci" id="btn" onclick="fibo()" />
+    <div id="ans2"></div>
+    <!-- <div id="ans"></div> -->
+  </body>
+</html>

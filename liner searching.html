@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var lst=[5,10,15,20,25,30,35,40,45,50];
+        var flag=0;
+        function search() {
+            var value=document.getElementById("txt1").value
+
+            for(var i=0;i<lst.length;i++)
+            {
+                if(value==lst[i]){
+                alert("your valur found at "+i)
+                flag=1;
+            }
+            }
+            if(flag==0)
+            alert("not found")
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" value="search" onclick="search()">
+</body>
+</html>

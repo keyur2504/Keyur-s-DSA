@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var lst=[];
+        var front=-1;
+        var rare=-1;
+        
+        function add(){
+            var num1=document.getElementById("txt1").value
+            if(rare==-1 && front==-1){
+                rare=0;
+                front=0;
+                lst[rare]=num1;
+            }else{
+                rare++;
+                lst[rare]=num1;
+            }
+            display()
+        }
+        function remove(){
+            if(front==-1){
+                alert("Queue is empty")
+            }else if(front>rare){
+                alert("Empty queue")
+                front=-1
+            }
+            else{
+                lst[front]=null
+                front++;
+            }
+            display()
+        }
+        function display(){
+            if(front==-1 ){
+                alert("Queue is Emptyyyyyyyyy")
+            }else{
+                var tab="<table border=1>"
+                for(var i=front;i<=rare;i++){
+                    tab+="<tr><td>"+lst[i]+"</td></td>"
+                }
+                tab+="</table>"
+                document.getElementById("ans").innerHTML=tab
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" value="add" onclick="add()">
+    <input type="button" value="Remove" onclick="remove()">
+    <div id="ans"></div>
+</body>
+</html>

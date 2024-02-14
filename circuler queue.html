@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var lst= new Array(5)
+        var length=0;
+        var front=-1;
+        var rare=-1;
+
+        function push(){
+            var num1=document.getElementById("txt1").value
+                if(rare==-1 && front==-1){
+                    front = 0;
+                    rare = 0;
+                    lst[rare]=num1;
+                    length++
+                    // rare++;
+                }else if(length<5){
+                    rare=(rare+1%5)
+                    lst[rare]=num1;
+                    length++
+                }  else{
+                    alert('Queue is Overflow')
+                }
+                console.log(lst)
+                display()
+        }
+        function display(){
+            if(front==-1 ){
+                alert("Queue is Emptyyyyyyyyy")
+            }else{
+                var tab="<table border=1>"
+                for(var i=front;i<=rare;i++){
+                    tab+="<tr><td>"+lst[i]+"</td></td>"
+                }
+                tab+="</table>"
+                document.getElementById("ans").innerHTML=tab
+            }
+        }
+        function pop(){
+            if(front==-1){
+                alert("Queue is empty")
+            }else if(front>rare){
+                alert("Empty queue")
+                front=-1
+                length++
+            }
+            else{
+                lst[front]=null
+                front++;
+            }
+            display()
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" id="btn1" value="Add" onclick="push()">
+    <input type="button" id="btn2" value="display" onclick="display()">
+    <input type="button" id="btn3" value="pop" onclick="pop()">
+    <div id="ans"></div>
+</body>
+</html>

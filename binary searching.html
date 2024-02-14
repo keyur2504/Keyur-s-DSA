@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function search() {
+        //     var lst=[10,20,30,40,50,60,70,80,90,100];
+        //     var low=0;
+        //     var high=lst.length-1
+        //    var  mid=Math.floor(low+high/2)
+        //     var value=document.getElementById("txt1").value
+        //     var index=lst.indexOf(value)
+        //     if(index>=0){
+        //         while(lst[low]!=value){
+        //             if(lst[mid]<value){
+        //                 low=mid+1
+        //                 mid=Math.floor(low+high)/2
+        //             }
+        //             else{
+        //                 alert("found")
+        //             }
+        //         }
+        //     }
+        // }
+        function search(){
+            var flag=0
+            var lst=[10,20,30,40,50,60,70,80]
+            var value=document.getElementById("txt1").value
+            var low=0;
+            var high=lst.length-1;
+            while(low<=high){
+                var mid=Math.floor((low+high)/2)
+                if(value==lst[mid]){
+                    flag=1;
+                    alert("Value Found");
+                    break;
+                }else if(value<lst[mid]){
+                    high=mid-1
+                }else{
+                    low=mid+1
+                }
+            }
+            if(flag==0){
+                alert("Value Not Found")
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" value="Search" onclick="search()">
+</body>
+</html>
